@@ -1,5 +1,8 @@
 # Ralph Loop Sample with GitHub Copilot CLI
 
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/MarcelRoozekrans?style=flat&logo=githubsponsors&color=ea4aaa&label=Sponsor)](https://github.com/sponsors/MarcelRoozekrans)
+
+
 > Autonomous coding loop using the **Ralph Wiggum Method** with GitHub Copilot CLI
 
 ## What is Ralph Wiggum?

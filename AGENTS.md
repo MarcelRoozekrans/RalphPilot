@@ -11,13 +11,14 @@ the loop builds in a target repo.
 - `ralph.ps1` and `ralph-init.ps1` are the whole product. Everything else is documentation or template.
 - `.ralph/` is the template that `ralph-init.ps1` copies verbatim into a target repo, and that
   `ralph.ps1` reads when it runs in this repo (self mode, the default without `-Repo` or `-WorkDir`).
-- `.ralph/AGENTS.md` is not instructions about this repo. It is part of the product: the build and
+- `.ralph/AGENTS.md` is part of the product, not instructions about these scripts: the build and
   test conventions of the sample HelloWorld app (.NET 10, xUnit, `src/HelloWorld`,
-  `tests/HelloWorld.Tests`), which the loop's agent reads and updates inside a target repo. Do not
-  follow its commands here (this repo has no `src/` or `tests/`) and do not merge it with this file.
-  The same holds for `.ralph/prompt.md`, `.ralph/fix_plan.md` and `.ralph/specs/`. Change these
-  files only as a deliberate change to the shipped template, because `ralph-init.ps1` copies them
-  into every new target repo; never as a side effect of other work or of a loop run.
+  `tests/HelloWorld.Tests`). Do not merge it with this file.
+- During a self-mode loop run, `.ralph/prompt.md` drives the run: the loop's agent follows it and
+  `.ralph/AGENTS.md`, and updates `.ralph/fix_plan.md` as the prompt says.
+- Outside a loop run, when you work on the scripts, change the files under `.ralph/` only as a
+  deliberate change to the shipped template, because `ralph-init.ps1` copies them into every new
+  target repo.
 - The `.ralph/specs/` files are the spec the loop builds from; the prompt tells the loop never to
   change them.
 

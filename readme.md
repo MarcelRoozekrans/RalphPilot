@@ -87,7 +87,7 @@ This creates:
   AGENTS.md        # build/run conventions (Ralph self-updates)
   fix_plan.md      # TODO list (Ralph maintains)
   specs/
-    README.md      # put your specification files here
+    helloworld.md  # sample specification (replace with your own)
 ```
 
 Then commit, push, and run `ralph.ps1 -Repo <url> -Push`.
@@ -114,7 +114,7 @@ Use `ralph-init.ps1` to scaffold it in a new repo.
 2. It looks for a `.ralph/` folder containing `prompt.md`
 3. Each iteration, Ralph reads specs + fix_plan, picks the most important task, implements it
 4. Ralph updates `fix_plan.md` with progress, updates `AGENTS.md` with build learnings
-5. On success the loop auto-commits; on failure it continues — next loop fixes it
+5. The agent commits (and pushes) itself when its tests pass, as `.ralph/prompt.md` instructs; the loop only counts a failed exit code and continues, so the next iteration fixes it
 6. When using `-Repo -Push`, commits are pushed back to the remote after the loop
 
 ## Requirements

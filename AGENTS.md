@@ -14,8 +14,10 @@ the loop builds in a target repo.
 - `.ralph/AGENTS.md` is not instructions about this repo. It is part of the product: the build and
   test conventions of the sample HelloWorld app (.NET 10, xUnit, `src/HelloWorld`,
   `tests/HelloWorld.Tests`), which the loop's agent reads and updates inside a target repo. Do not
-  edit it, do not follow its commands here (this repo has no `src/` or `tests/`), and do not merge it
-  with this file. The same holds for `.ralph/prompt.md`, `.ralph/fix_plan.md` and `.ralph/specs/`.
+  follow its commands here (this repo has no `src/` or `tests/`) and do not merge it with this file.
+  The same holds for `.ralph/prompt.md`, `.ralph/fix_plan.md` and `.ralph/specs/`. Change these
+  files only as a deliberate change to the shipped template, because `ralph-init.ps1` copies them
+  into every new target repo; never as a side effect of other work or of a loop run.
 - The `.ralph/specs/` files are the spec the loop builds from; the prompt tells the loop never to
   change them.
 
